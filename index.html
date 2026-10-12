@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase - Better Products, Happier You | Online Store</title>
+  <meta name="description" content="Shop top trending electronics, fashion, home essentials, and lifestyle products with great discounts, secure checkout, and superfast delivery.">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" id="brandLogo" data-view="home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1"></circle>
+            <circle cx="19" cy="21" r="1"></circle>
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">ShopEase</span>
+          <span class="brand-tagline">Better Products, Happier You</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active" data-view="home">Home</a>
+        <a href="#shop" class="nav-link" data-view="shop">Product</a>
+        <a href="#about" class="nav-link" data-view="about">About</a>
+        <a href="#contact" class="nav-link" data-view="contact">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Quick Search Toggle Button -->
+        <button class="action-btn icon-only" id="quickSearchBtn" title="Search" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Wishlist Header Button -->
+        <button class="action-btn icon-only" id="wishlistHeaderBtn" title="Wishlist" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="action-badge" id="wishlistBadge">0</span>
+        </button>
+
+        <!-- User Account Menu Wrapper -->
+        <div class="user-menu-wrapper" id="userMenuWrapper">
+          <button class="action-btn user-btn" id="userAccountBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span id="userBtnText">Login / Register</span>
+          </button>
+          <!-- Logged in Dropdown -->
+          <div class="user-dropdown-menu" id="userDropdownMenu" style="display: none;">
+            <div class="user-dropdown-header">
+              <span class="user-avatar-badge" id="userDropdownAvatar">A</span>
+              <div class="user-info-text">
+                <strong id="userDropdownName">Alex Morgan</strong>
+                <small id="userDropdownEmail">alex@example.com</small>
+              </div>
+            </div>
+            <div class="user-dropdown-divider"></div>
+            <a href="#orders" class="dropdown-item" id="menuMyOrders">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              My Orders
+            </a>
+            <a href="#wishlist" class="dropdown-item" id="menuMyWishlist">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              Saved Wishlist
+            </a>
+            <div class="user-dropdown-divider"></div>
+            <button class="dropdown-item logout-item" id="menuLogoutBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+              Sign Out
+            </button>
+          </div>
+        </div>
+
+        <!-- Cart Button -->
+        <button class="action-btn cart-btn" id="openCartBtn" aria-label="Cart">
+          <div class="cart-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="action-badge" id="cartBadge">2</span>
+          </div>
+          <span>My Cart</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="action-btn icon-only mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       VIEW 1: HOME PAGE
+       ========================================================================= -->
+  <div class="view-content active" id="viewHome">
+    <!-- Home Hero Banner -->
+    <section class="home-hero">
+      <div class="home-hero-container">
+        <div class="home-hero-text">
+          <h1 class="hero-main-title">Better Products for a Happier Lifestyle</h1>
+          <p class="hero-main-desc">
+            Explore curated collections of world-class electronics, trending fashion, kitchen essentials, and beauty solutions with up to 40% OFF and express delivery.
+          </p>
+          <div class="hero-cta-group">
+            <button class="primary-btn hero-btn-lg" id="homeShopNowBtn">
+              <span>Shop All Products</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <button class="secondary-btn hero-btn-lg" id="homeHotDealsBtn">
+              🔥 View Hot Deals
+            </button>
+          </div>
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <strong>50,000+</strong>
+              <span>Happy Shoppers</span>
+            </div>
+            <div class="hero-stat-sep"></div>
+            <div class="hero-stat-item">
+              <strong>4.8 ★</strong>
+              <span>Customer Rating</span>
+            </div>
+            <div class="hero-stat-sep"></div>
+            <div class="hero-stat-item">
+              <strong>2-Day</strong>
+              <span>Express Shipping</span>
+            </div>
+          </div>
+        </div>
+        <div class="home-hero-visual">
+          <div class="hero-showcase-card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80" alt="Sony Headphones Showcase" class="hero-img">
+            <div class="hero-floating-badge badge-sale">
+              <span class="badge-dot"></span>
+              Trending: Sony WH-1000XM5 (17% OFF)
+            </div>
+            <div class="hero-floating-badge badge-trust">
+              🔒 100% Verified Authentic
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Propositions / Perks -->
+    <section class="perks-section">
+      <div class="perks-wrapper">
+        <div class="perks-container" id="perksContainer">
+          <div class="perk-box">
+            <div class="perk-icon">🚀</div>
+            <div class="perk-details">
+              <h4>Free Express Shipping</h4>
+              <p>On all orders above ₹2,000 across India</p>
+            </div>
+          </div>
+          <div class="perk-box">
+            <div class="perk-icon">🛡️</div>
+            <div class="perk-details">
+              <h4>100% Genuine Products</h4>
+              <p>Directly sourced from certified brands</p>
+            </div>
+          </div>
+          <div class="perk-box">
+            <div class="perk-icon">🔄</div>
+            <div class="perk-details">
+              <h4>7-Day Easy Returns</h4>
+              <p>No questions asked doorstep pickup</p>
+            </div>
+          </div>
+          <div class="perk-box">
+            <div class="perk-icon">🎧</div>
+            <div class="perk-details">
+              <h4>24/7 Priority Support</h4>
+              <p>Dedicated helpline & instant live chat</p>
+            </div>
+          </div>
+          <!-- Cloned cards for seamless infinite horizontal auto-scroll -->
+          <div class="perk-box" aria-hidden="true">
+            <div class="perk-icon">🚀</div>
+            <div class="perk-details">
+              <h4>Free Express Shipping</h4>
+              <p>On all orders above ₹2,000 across India</p>
+            </div>
+          </div>
+          <div class="perk-box" aria-hidden="true">
+            <div class="perk-icon">🛡️</div>
+            <div class="perk-details">
+              <h4>100% Genuine Products</h4>
+              <p>Directly sourced from certified brands</p>
+            </div>
+          </div>
+          <div class="perk-box" aria-hidden="true">
+            <div class="perk-icon">🔄</div>
+            <div class="perk-details">
+              <h4>7-Day Easy Returns</h4>
+              <p>No questions asked doorstep pickup</p>
+            </div>
+          </div>
+          <div class="perk-box" aria-hidden="true">
+            <div class="perk-icon">🎧</div>
+            <div class="perk-details">
+              <h4>24/7 Priority Support</h4>
+              <p>Dedicated helpline & instant live chat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Browse By Category Showcase -->
+    <section class="home-categories-section">
+      <div class="section-container">
+        <div class="section-heading-row">
+          <div>
+            <h2 class="section-title">Shop by Categories</h2>
+            <p class="section-subtitle">Pick from our most popular departments</p>
+          </div>
+          <button class="view-all-link" id="homeViewAllCatsBtn">View Catalog ›</button>
+        </div>
+        <div class="category-cards-grid">
+          <div class="cat-card" data-category="Electronics">
+            <div class="cat-card-icon">💻</div>
+            <h3>Electronics</h3>
+            <span class="cat-card-count">24 Products</span>
+          </div>
+          <div class="cat-card" data-category="Fashion">
+            <div class="cat-card-icon">👟</div>
+            <h3>Fashion</h3>
+            <span class="cat-card-count">18 Products</span>
+          </div>
+          <div class="cat-card" data-category="Home & Living">
+            <div class="cat-card-icon">🏡</div>
+            <h3>Home & Living</h3>
+            <span class="cat-card-count">12 Products</span>
+          </div>
+          <div class="cat-card" data-category="Beauty & Personal Care">
+            <div class="cat-card-icon">✨</div>
+            <h3>Beauty Care</h3>
+            <span class="cat-card-count">10 Products</span>
+          </div>
+          <div class="cat-card" data-category="Sports & Outdoors">
+            <div class="cat-card-icon">🏋️‍♂️</div>
+            <h3>Sports & Fitness</h3>
+            <span class="cat-card-count">8 Products</span>
+          </div>
+          <div class="cat-card" data-category="Books">
+            <div class="cat-card-icon">📚</div>
+            <h3>Books & Wisdom</h3>
+            <span class="cat-card-count">6 Products</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="promo-strip-section">
+      <div class="promo-strip-container">
+        <div class="promo-strip-content">
+          <span class="promo-pill">SPECIAL OFFER</span>
+          <h2>Save 10% Extra on Your Entire Order</h2>
+          <p>Apply promo code <strong>SHOP10</strong> at checkout to redeem instant discount on top brands!</p>
+          <button class="primary-btn promo-btn" id="promoShopNowBtn">Claim Discount Now</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 2: SHOP PAGE (The Original Product Listing)
+       ========================================================================= -->
+  <div class="view-content" id="viewShop">
+    <!-- Page Banner / Breadcrumbs -->
+    <section class="page-banner">
+      <div class="banner-container">
+        <div class="banner-content">
+          <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+            <a href="#home" data-view="home">Home</a>
+            <span class="separator">›</span>
+            <span class="current">Shop</span>
+          </nav>
+          <h1 class="page-title">Shop Our Products</h1>
+          <p class="page-subtitle">
+            Discover amazing products here at the best prices. Shop by category, filter, and find exactly what you need.
+          </p>
+        </div>
+        <div class="banner-graphic" aria-hidden="true">
+          <div class="graphic-card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=80" alt="Workspace products showcase" class="graphic-image">
+            <div class="graphic-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Store Section -->
+    <main class="store-container">
+      <div class="store-layout">
+
+        <!-- Mobile Filter Toggle Button -->
+        <div class="mobile-filter-bar">
+          <button class="mobile-filter-trigger" id="mobileFilterOpenBtn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+            <span>Filter Products</span>
+            <span class="mobile-filter-badge" id="mobileFilterBadge" style="display: none;">0</span>
+          </button>
+          <span class="mobile-product-count" id="mobileProductCount">Showing 1-8 of 24</span>
+        </div>
+
+        <!-- Main Products Viewport (Full Width) -->
+        <section class="products-viewport">
+          <!-- Controls Toolbar: Filter Trigger, Search, Sort, View Modes -->
+          <div class="controls-toolbar">
+            <div class="toolbar-left">
+              <button class="toolbar-filter-btn" id="toolbarFilterBtn" title="Open Filter Products Panel" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+                <span>Filter Products</span>
+                <span class="toolbar-filter-badge" id="toolbarFilterBadge" style="display: none;">0</span>
+              </button>
+
+              <!-- Search Bar -->
+              <div class="search-box-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="productSearchInput" class="product-search-input" placeholder="Search for products..." autocomplete="off">
+                <button class="clear-search-btn" id="clearSearchBtn" aria-label="Clear Search" style="display: none;">&times;</button>
+              </div>
+            </div>
+
+            <!-- Sort and View Mode Container -->
+            <div class="toolbar-right">
+              <!-- Sort Dropdown -->
+              <div class="sort-wrapper">
+                <label for="sortSelect" class="sort-label">Sort by:</label>
+                <div class="select-dropdown-container">
+                  <select id="sortSelect" class="sort-select">
+                    <option value="popularity">Popularity</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="rating">Highest Rated</option>
+                    <option value="newest">Newest Arrivals</option>
+                  </select>
+                  <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- View Layout Toggles (Grid vs List) -->
+              <div class="view-toggles" role="group" aria-label="View Modes">
+                <button class="view-btn active" id="gridViewBtn" title="Grid View" aria-label="Grid View">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                    <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                    <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+                    <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                  </svg>
+                </button>
+                <button class="view-btn" id="listViewBtn" title="List View" aria-label="List View">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="3" y="4" width="4" height="4" rx="1"></rect>
+                    <rect x="10" y="4" width="11" height="4" rx="1"></rect>
+                    <rect x="3" y="10" width="4" height="4" rx="1"></rect>
+                    <rect x="10" y="10" width="11" height="4" rx="1"></rect>
+                    <rect x="3" y="16" width="4" height="4" rx="1"></rect>
+                    <rect x="10" y="16" width="11" height="4" rx="1"></rect>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results Counter & Active Filter Pills -->
+          <div class="results-meta-bar">
+            <p class="results-count" id="resultsCount">Showing 1–8 of 24 products</p>
+            <div class="active-filter-tags" id="activeFilterTags"></div>
+          </div>
+
+          <!-- Products Grid Container -->
+          <div class="products-grid" id="productsGrid">
+            <!-- Dynamically generated via app.js -->
+          </div>
+
+          <!-- Empty State -->
+          <div class="empty-state" id="emptyState" style="display: none;">
+            <div class="empty-illustration">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+            <h3>No matching products found</h3>
+            <p>Try clearing filters or search for something else like "laptop", "watch", or "cotton".</p>
+            <button class="primary-btn" id="emptyResetBtn">Reset All Filters</button>
+          </div>
+
+          <!-- Pagination Bar -->
+          <nav class="pagination-container" id="paginationContainer" aria-label="Product Pages">
+            <!-- Dynamically populated or rendered -->
+          </nav>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 3: ABOUT US
+       ========================================================================= -->
+  <div class="view-content" id="viewAbout">
+    <section class="about-hero">
+      <div class="about-hero-container">
+        <span class="hero-tag">ABOUT SHOPEASE</span>
+        <h1 class="page-title">We Deliver Better Products For A Happier You</h1>
+        <p class="about-hero-lead">
+          Founded in 2024, ShopEase was built with a simple goal: to make premium everyday essentials, cutting-edge technology, and modern fashion accessible to everyone with 100% authenticity and uncompromising transparency.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-metrics-section">
+      <div class="section-container">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <h3>1M+</h3>
+            <p>Orders Delivered Nationwide</p>
+          </div>
+          <div class="metric-card">
+            <h3>50,000+</h3>
+            <p>Curated Verified Products</p>
+          </div>
+          <div class="metric-card">
+            <h3>99.8%</h3>
+            <p>On-Time Delivery Success Rate</p>
+          </div>
+          <div class="metric-card">
+            <h3>4.8 / 5</h3>
+            <p>Average Customer Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-values-section">
+      <div class="section-container">
+        <h2 class="section-title text-center">Our Core Pillars</h2>
+        <p class="section-subtitle text-center">What drives our day-to-day commitment to quality</p>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">💎</div>
+            <h4>Uncompromised Quality</h4>
+            <p>Every single product listed on our store undergoes a stringent 12-point quality verification check before dispatch.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <h4>Customer First</h4>
+            <p>Your satisfaction is our absolute benchmark. If something is not right, our support team will resolve it within 24 hours.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🌿</div>
+            <h4>Sustainable Packaging</h4>
+            <p>We use 100% biodegradable corrugated cardboard and minimize plastic in our fulfillment packaging operations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cta-section">
+      <div class="section-container text-center">
+        <h2>Experience the ShopEase Standard</h2>
+        <p>Join over a million happy shoppers and explore our diverse departments today.</p>
+        <button class="primary-btn hero-btn-lg" id="aboutShopNowBtn">Browse Collection</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 4: CONTACT US
+       ========================================================================= -->
+  <div class="view-content" id="viewContact">
+    <section class="contact-hero">
+      <div class="contact-hero-container">
+        <h1 class="page-title">We’re Here to Help You</h1>
+        <p class="contact-hero-lead">
+          Have questions about your order, tracking, returns, or product warranty? Get in touch with our friendly support team anytime.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-main-section">
+      <div class="section-container contact-layout">
+        <!-- 1. Contact Information: Get In Touch Directly -->
+        <div class="contact-info-card">
+          <h3>Get In Touch Directly</h3>
+          <p>We typically respond to inquiries within 15 minutes during operating hours.</p>
+          
+          <div class="contact-methods-list">
+            <!-- Method 1: Phone Support -->
+            <div class="contact-method-item" id="phoneSupportCard">
+              <div class="method-icon">📞</div>
+              <div class="method-content">
+                <div class="method-header-line">
+                  <strong>Phone Support</strong>
+                  <span class="method-badge">Available Now</span>
+                </div>
+                <p class="method-detail">
+                  <a href="tel:+918001234567" class="method-link" id="phoneSupportLink">+91 (800) 123-4567</a>
+                  <span class="method-subtext">(Mon-Sat, 9AM-8PM IST)</span>
+                </p>
+                <div class="method-actions">
+                  <a href="tel:+918001234567" class="method-action-btn primary-action" id="callNowBtn">
+                    <span>📞 Call Now</span>
+                  </a>
+                  <button type="button" class="method-action-btn secondary-action" id="copyPhoneBtn" data-copy="+91 (800) 123-4567">
+                    <span>📋 Copy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Method 2: Email Assistance -->
+            <div class="contact-method-item" id="emailSupportCard">
+              <div class="method-icon">✉️</div>
+              <div class="method-content">
+                <div class="method-header-line">
+                  <strong>Email Assistance</strong>
+                  <span class="method-badge">24/7 Monitored</span>
+                </div>
+                <p class="method-detail">
+                  <a href="mailto:support@shopease.com?subject=ShopEase%20Customer%20Inquiry" class="method-link">support@shopease.com</a> / 
+                  <a href="mailto:care@shopease.com?subject=ShopEase%20Care%20Inquiry" class="method-link">care@shopease.com</a>
+                </p>
+                <div class="method-actions">
+                  <a href="mailto:support@shopease.com?subject=ShopEase%20Support%20Request" class="method-action-btn primary-action" id="sendEmailBtn">
+                    <span>✉️ Send Email</span>
+                  </a>
+                  <button type="button" class="method-action-btn secondary-action" id="copyEmailBtn" data-copy="support@shopease.com">
+                    <span>📋 Copy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Method 3: Headquarters -->
+            <div class="contact-method-item" id="hqSupportCard">
+              <div class="method-icon">📍</div>
+              <div class="method-content">
+                <div class="method-header-line">
+                  <strong>Headquarters</strong>
+                  <span class="method-badge">Bengaluru, IN</span>
+                </div>
+                <p class="method-detail">
+                  Tech Park Phase 2, Indiranagar, Bengaluru, KA 560038
+                </p>
+                <div class="method-actions">
+                  <a href="https://www.google.com/maps/search/?api=1&query=Tech+Park+Phase+2,+Indiranagar,+Bengaluru,+KA+560038" target="_blank" rel="noopener noreferrer" class="method-action-btn primary-action" id="openMapsBtn">
+                    <span>📍 View on Maps ↗</span>
+                  </a>
+                  <button type="button" class="method-action-btn secondary-action" id="copyAddressBtn" data-copy="Tech Park Phase 2, Indiranagar, Bengaluru, KA 560038">
+                    <span>📋 Copy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Method 4: Live Chat -->
+            <div class="contact-method-item" id="liveChatSupportCard">
+              <div class="method-icon live-chat-pulse">💬</div>
+              <div class="method-content">
+                <div class="method-header-line">
+                  <strong>Live Chat</strong>
+                  <span class="method-badge badge-online">🟢 24/7 Online</span>
+                </div>
+                <p class="method-detail">
+                  Instant 24/7 virtual assistant available on all pages
+                </p>
+                <div class="method-actions">
+                  <button type="button" class="method-action-btn primary-action btn-chat-trigger" id="contactStartChatBtn">
+                    <span>💬 Start Live Chat</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Contact Form: Send Us a Message (Placed below Get In Touch Directly) -->
+        <div class="contact-form-card">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Name *</label>
+                <input type="text" id="contactName" placeholder="e.g. Alex Morgan" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address *</label>
+                <input type="email" id="contactEmail" placeholder="e.g. alex@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject">Inquiry Subject *</label>
+              <select id="contactSubject" required>
+                <option value="Order Status">Order Status & Tracking</option>
+                <option value="Product Question">Product Specification Query</option>
+                <option value="Return / Refund">Return or Refund Request</option>
+                <option value="Payment Issue">Payment & Billing</option>
+                <option value="General Feedback">General Feedback / Partnership</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Your Message *</label>
+              <textarea id="contactMessage" rows="5" placeholder="How can we help you today? Please share any relevant order IDs..." required></textarea>
+            </div>
+
+            <button type="submit" class="primary-btn contact-submit-btn" id="contactSubmitBtn">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- 3. FAQ Accordion -->
+        <div class="faq-container">
+          <h3>Frequently Asked Questions</h3>
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>How long does delivery take?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Standard delivery takes 2 to 4 business days. Metro cities qualify for same-day or next-day express delivery on all orders over ₹2,000!
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>What is your return policy?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              We offer a 7-day hassle-free return policy. If you are not completely satisfied, request a return from your dashboard and our courier will collect it free of charge.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>Are all products genuine?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes! 100% authentic with manufacturer warranty. We are authorized retail partners for Apple, Sony, Samsung, Dell, and other top global brands.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 1: QUICK SEARCH MODAL (Triggered by 🔍 icon)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="searchModal" role="dialog" aria-modal="true" style="display: none;">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <div class="modal-search-input-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="modalSearchInput" placeholder="Search by name, category, or brand..." autocomplete="off">
+          <button class="modal-clear-search" id="modalClearSearchBtn">&times;</button>
+        </div>
+        <button class="modal-close-icon-btn" id="closeSearchModalBtn">&times;</button>
+      </div>
+
+      <!-- Quick Search Suggestions / Popular Tags -->
+      <div class="modal-search-body">
+        <div class="popular-tags-box">
+          <span class="tags-label">Trending Searches:</span>
+          <div class="tags-list">
+            <button class="search-tag-btn" data-query="iPhone">iPhone</button>
+            <button class="search-tag-btn" data-query="Headphones">Headphones</button>
+            <button class="search-tag-btn" data-query="Laptop">Laptop</button>
+            <button class="search-tag-btn" data-query="Sneakers">Sneakers</button>
+            <button class="search-tag-btn" data-query="Air Fryer">Air Fryer</button>
+            <button class="search-tag-btn" data-query="Watch">Watch</button>
+            <button class="search-tag-btn" data-query="T-Shirt">T-Shirt</button>
+          </div>
+        </div>
+
+        <!-- Live Instant Results Preview -->
+        <div class="search-live-results" id="searchLiveResults">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       DRAWER 1: SLIDE-OVER WISHLIST DRAWER (Triggered by 🤍 icon)
+       ========================================================================= -->
+  <aside class="cart-drawer-overlay" id="wishlistOverlay">
+    <div class="cart-drawer wishlist-drawer" id="wishlistDrawer" role="dialog" aria-labelledby="wishlistDrawerTitle">
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title-group">
+          <h2 id="wishlistDrawerTitle">My Saved Wishlist</h2>
+          <span class="cart-item-count" id="wishlistHeaderCount">(0 items)</span>
+        </div>
+        <button class="cart-close-btn" id="closeWishlistBtn" aria-label="Close Wishlist">&times;</button>
+      </div>
+
+      <div class="wishlist-action-bar">
+        <span class="wishlist-subtext">Items you love and want to shop later</span>
+        <button class="clear-wishlist-link" id="clearAllWishlistBtn">Clear All</button>
+      </div>
+
+      <div class="cart-items-list" id="wishlistItemsList">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="wishlist-drawer-footer" id="wishlistFooter">
+        <button class="primary-btn move-all-cart-btn" id="moveAllWishlistToCartBtn">
+          🛒 Move All to Cart
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MODAL 2: USER AUTHENTICATION MODAL (Triggered by 👤 Login / Register)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" style="display: none;">
+    <div class="auth-modal-card">
+      <button class="modal-close-btn" id="closeAuthModalBtn">&times;</button>
+      
+      <!-- Auth Tabs: Sign In / Create Account -->
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="tabSignInBtn">Sign In</button>
+        <button class="auth-tab-btn" id="tabSignUpBtn">Create Account</button>
+      </div>
+
+      <!-- Sign In Form -->
+      <form class="auth-form" id="signInForm">
+        <div class="auth-header-text">
+          <h3>Welcome Back!</h3>
+          <p>Access your orders, saved addresses, and shopping bag.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="loginEmail">Email Address or Mobile Number</label>
+          <input type="text" id="loginEmail" placeholder="alex@example.com" value="alex@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="••••••••" value="password123" required>
+        </div>
+
+        <div class="form-extra-row">
+          <label class="remember-label">
+            <input type="checkbox" id="rememberMe" checked>
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot-link" id="forgotPassLink">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="primary-btn auth-submit-btn">
+          Sign In to ShopEase
+        </button>
+
+        <div class="social-auth-sep"><span>OR CONTINUE WITH</span></div>
+        <div class="social-auth-buttons">
+          <button type="button" class="social-login-btn" id="googleLoginBtn">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+            Google
+          </button>
+          <button type="button" class="social-login-btn" id="appleLoginBtn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.84c.64-.78 1.08-1.87.96-2.96-.93.04-2.07.62-2.73 1.4-.58.67-1.1 1.77-.96 2.84 1.04.08 2.1-.51 2.73-1.28"/></svg>
+            Apple
+          </button>
+        </div>
+      </form>
+
+      <!-- Create Account Form -->
+      <form class="auth-form" id="signUpForm" style="display: none;">
+        <div class="auth-header-text">
+          <h3>Create an Account</h3>
+          <p>Join ShopEase for fast checkout and exclusive member discounts.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="registerName">Full Name</label>
+          <input type="text" id="registerName" placeholder="Alex Morgan" required>
+        </div>
+
+        <div class="form-group">
+          <label for="registerEmail">Email Address</label>
+          <input type="email" id="registerEmail" placeholder="alex@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <input type="password" id="registerPassword" placeholder="Minimum 6 characters" required>
+        </div>
+
+        <label class="remember-label" style="margin-bottom: 18px;">
+          <input type="checkbox" id="termsCheck" required checked>
+          <span>I agree to ShopEase Terms & Privacy Policy</span>
+        </label>
+
+        <button type="submit" class="primary-btn auth-submit-btn">
+          Create Free Account
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       DRAWER 1: SLIDE-OVER FILTER PRODUCTS PANEL (Triggered by Navbar Filter Products)
+       ========================================================================= -->
+  <aside class="filter-panel-overlay" id="filterPanelOverlay" role="dialog" aria-modal="true" aria-labelledby="filterPanelTitle">
+    <div class="filter-panel-drawer" id="filterPanelDrawer">
+      <!-- Panel Header -->
+      <div class="filter-panel-header">
+        <div class="filter-panel-title-wrap">
+          <div class="filter-icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+          </div>
+          <div>
+            <h2 class="filter-panel-title" id="filterPanelTitle">Filter Products</h2>
+            <span class="filter-panel-subtitle" id="filterPanelSubtitle">Select multiple filters to narrow products</span>
+          </div>
+        </div>
+        <button class="filter-panel-close-btn" id="closeFilterPanelBtn" aria-label="Close Filter Panel">&times;</button>
+      </div>
+
+      <!-- Panel Body (Scrollable filter categories & options) -->
+      <div class="filter-panel-body" id="filterPanelBody">
+        <!-- Live summary bar -->
+        <div class="panel-active-summary" id="panelActiveSummary" style="display: none;">
+          <span class="panel-active-count-text" id="panelActiveCountText">0 filters selected</span>
+          <button type="button" class="panel-reset-inline-btn" id="panelInlineResetBtn">Reset All</button>
+        </div>
+
+        <!-- Filter Group: Categories -->
+        <div class="filter-group">
+          <div class="filter-header" data-toggle="panelCategoryGroup">
+            <div class="filter-header-left">
+              <span class="filter-group-icon">🏷️</span>
+              <span class="filter-title">Categories</span>
+            </div>
+            <div class="filter-header-right">
+              <span class="filter-selected-badge" id="catSelectedBadge" style="display: none;">0</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="filter-body" id="panelCategoryGroup">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="category" value="Electronics">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Electronics</span>
+              <span class="filter-count" id="countCatElectronics">(24)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="category" value="Fashion">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Fashion</span>
+              <span class="filter-count" id="countCatFashion">(18)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="category" value="Home & Living">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Home & Living</span>
+              <span class="filter-count" id="countCatHome">(12)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="category" value="Beauty & Personal Care">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Beauty & Personal Care</span>
+              <span class="filter-count" id="countCatBeauty">(10)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="category" value="Sports & Outdoors">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Sports & Outdoors</span>
+              <span class="filter-count" id="countCatSports">(8)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="category" value="Books">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Books</span>
+              <span class="filter-count" id="countCatBooks">(6)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="category" value="Toys & Games">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Toys & Games</span>
+              <span class="filter-count" id="countCatToys">(5)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Filter Group: Price Range -->
+        <div class="filter-group">
+          <div class="filter-header" data-toggle="panelPriceGroup">
+            <div class="filter-header-left">
+              <span class="filter-group-icon">💰</span>
+              <span class="filter-title">Price Range</span>
+            </div>
+            <div class="filter-header-right">
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="filter-body" id="panelPriceGroup">
+            <label class="filter-radio-item">
+              <input type="radio" name="priceRange" value="all" checked>
+              <span class="custom-radio"></span>
+              <span class="filter-label-text">All Prices</span>
+            </label>
+            <label class="filter-radio-item">
+              <input type="radio" name="priceRange" value="0-500">
+              <span class="custom-radio"></span>
+              <span class="filter-label-text">₹0 - ₹500</span>
+            </label>
+            <label class="filter-radio-item">
+              <input type="radio" name="priceRange" value="501-1000">
+              <span class="custom-radio"></span>
+              <span class="filter-label-text">₹501 - ₹1,000</span>
+            </label>
+            <label class="filter-radio-item">
+              <input type="radio" name="priceRange" value="1001-2000">
+              <span class="custom-radio"></span>
+              <span class="filter-label-text">₹1,001 - ₹2,000</span>
+            </label>
+            <label class="filter-radio-item">
+              <input type="radio" name="priceRange" value="2001-5000">
+              <span class="custom-radio"></span>
+              <span class="filter-label-text">₹2,001 - ₹5,000</span>
+            </label>
+            <label class="filter-radio-item">
+              <input type="radio" name="priceRange" value="5001-plus">
+              <span class="custom-radio"></span>
+              <span class="filter-label-text">₹5,001+</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Filter Group: Brand -->
+        <div class="filter-group">
+          <div class="filter-header" data-toggle="panelBrandGroup">
+            <div class="filter-header-left">
+              <span class="filter-group-icon">✨</span>
+              <span class="filter-title">Brand</span>
+            </div>
+            <div class="filter-header-right">
+              <span class="filter-selected-badge" id="brandSelectedBadge" style="display: none;">0</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="filter-body" id="panelBrandGroup">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="brand" value="Samsung">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Samsung</span>
+              <span class="filter-count" id="countBrandSamsung">(6)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="brand" value="Apple">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Apple</span>
+              <span class="filter-count" id="countBrandApple">(5)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="brand" value="Sony">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Sony</span>
+              <span class="filter-count" id="countBrandSony">(4)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="brand" value="Dell">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">Dell</span>
+              <span class="filter-count" id="countBrandDell">(3)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" name="brand" value="HP">
+              <span class="custom-checkbox"></span>
+              <span class="filter-label-text">HP</span>
+              <span class="filter-count" id="countBrandHP">(3)</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel Footer with Clear All and Apply Filters buttons -->
+      <div class="filter-panel-footer">
+        <button type="button" class="panel-clear-btn" id="panelClearAllBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="1 4 1 10 7 10"></polyline>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+          </svg>
+          <span>Clear All</span>
+        </button>
+        <button type="button" class="panel-apply-btn" id="panelApplyFiltersBtn">
+          <span>Apply Filters</span>
+          <span class="panel-apply-badge" id="panelApplyBadge"></span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       DRAWER 2: SLIDE-OVER SHOPPING CART (Triggered by 🛒 My Cart)
+       ========================================================================= -->
+  <aside class="cart-drawer-overlay" id="cartOverlay">
+    <div class="cart-drawer" id="cartDrawer" role="dialog" aria-labelledby="cartDrawerTitle">
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title-group">
+          <h2 id="cartDrawerTitle">Shopping Cart</h2>
+          <span class="cart-item-count" id="cartHeaderCount">(2 items)</span>
+        </div>
+        <button class="cart-close-btn" id="closeCartBtn" aria-label="Close cart">&times;</button>
+      </div>
+
+      <!-- Free Shipping Tracker -->
+      <div class="free-shipping-bar">
+        <div class="shipping-info-text" id="shippingProgressText">
+          Add <strong>₹501</strong> more for <strong>FREE Express Delivery</strong>!
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="shippingProgressFill" style="width: 75%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items List -->
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Cart Drawer Footer -->
+      <div class="cart-drawer-footer">
+        <!-- Promo Coupon Row -->
+        <div class="coupon-box">
+          <input type="text" id="couponInput" placeholder="Enter coupon (e.g. SHOP10)" class="coupon-input">
+          <button class="coupon-btn" id="applyCouponBtn">Apply</button>
+        </div>
+        <div class="coupon-feedback" id="couponFeedback"></div>
+
+        <!-- Bill Breakdown -->
+        <div class="bill-summary">
+          <div class="bill-row">
+            <span>Subtotal</span>
+            <span id="billSubtotal">₹104,890</span>
+          </div>
+          <div class="bill-row" id="billDiscountRow" style="display: none;">
+            <span>Discount</span>
+            <span class="discount-value" id="billDiscount">-₹10,489</span>
+          </div>
+          <div class="bill-row">
+            <span>Shipping</span>
+            <span class="free-badge" id="billShipping">FREE</span>
+          </div>
+          <div class="bill-row total-row">
+            <span>Estimated Total</span>
+            <span class="total-amount" id="billTotal">₹104,890</span>
+          </div>
+        </div>
+
+        <!-- Checkout Button -->
+        <button class="checkout-btn" id="checkoutBtn">
+          <span>Proceed to Checkout</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+        <p class="cart-guarantee">🔒 100% Secure Checkout with 7-Day Hassle-Free Returns</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MODAL 3: QUICK VIEW MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="quickViewModal" role="dialog" aria-modal="true" style="display: none;">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="quickViewCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-body" id="quickViewBody">
+        <!-- Populated via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 4: CHECKOUT SUCCESS MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="checkoutModal" role="dialog" aria-modal="true" style="display: none;">
+    <div class="checkout-modal-card">
+      <div class="success-icon-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h2>Order Placed Successfully!</h2>
+      <p class="order-id-text">Order ID: <strong id="orderIdDisplay">#SE-849201</strong></p>
+      <p class="order-subtext">Thank you for shopping with ShopEase! A confirmation email and tracking details have been sent to your account.</p>
+      
+      <div class="order-summary-box" id="orderSummaryBox"></div>
+
+      <div class="checkout-actions-row" style="display: flex; gap: 12px; margin-top: 10px;">
+        <button class="primary-btn" id="viewMyOrdersBtn" style="flex: 1.2; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <span>📦 View in My Orders</span>
+        </button>
+        <button class="secondary-btn" id="orderSuccessDoneBtn" style="flex: 1;">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 5: MY ORDERS MODAL (Displays all placed orders with products)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="ordersModal" role="dialog" aria-modal="true" style="display: none;">
+    <div class="orders-modal-card">
+      <div class="orders-modal-header">
+        <div class="orders-title-group">
+          <h2>📦 My Order History</h2>
+          <span class="orders-count-badge" id="ordersCountBadge">(0 Orders)</span>
+        </div>
+        <button class="modal-close-btn" id="closeOrdersModalBtn" aria-label="Close Orders">&times;</button>
+      </div>
+
+      <div class="orders-modal-body" id="ordersListContainer">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 6: CUSTOMER SERVICE POLICIES MODAL (Shipping, Returns, Terms)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="policyModal" role="dialog" aria-modal="true" style="display: none;">
+    <div class="policy-modal-card">
+      <div class="policy-modal-header">
+        <div class="policy-title-group">
+          <span class="policy-header-icon" id="policyHeaderIcon">🚚</span>
+          <div>
+            <h2 id="policyModalTitle">Shipping Policy</h2>
+            <p class="policy-subtitle" id="policyModalSubtitle">Everything you need to know about our express delivery</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="closePolicyModalBtn" aria-label="Close Policy">&times;</button>
+      </div>
+
+      <!-- Policy Tabs Switcher -->
+      <div class="policy-tabs-bar">
+        <button type="button" class="policy-tab-btn active" data-policy-tab="shipping"><span class="tab-icon">🚚</span> <span>Shipping Policy</span></button>
+        <button type="button" class="policy-tab-btn" data-policy-tab="return"><span class="tab-icon">🔄</span> <span>Return & Refund</span></button>
+        <button type="button" class="policy-tab-btn" data-policy-tab="terms"><span class="tab-icon">📜</span> <span>Terms & Conditions</span></button>
+      </div>
+
+      <div class="policy-modal-body" id="policyModalBody">
+        <!-- Rendered dynamically based on selected policy -->
+      </div>
+
+      <div class="policy-modal-footer">
+        <button type="button" class="secondary-btn" id="policyContactUsBtn">💬 Contact Support</button>
+        <button type="button" class="primary-btn" id="policyCloseOkBtn">Understood & Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-container">
+        <!-- Brand Column -->
+        <div class="footer-col brand-col">
+          <div class="brand-logo footer-logo" data-view="home">
+            <div class="brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="8" cy="21" r="1"></circle>
+                <circle cx="19" cy="21" r="1"></circle>
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name white-text">ShopEase</span>
+              <span class="brand-tagline gray-text">Better Products, Happier You</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Your trusted destination for premium electronics, fashion, lifestyle goods, and daily essentials with verified quality and express delivery.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home" data-view="home">Home</a></li>
+            <li><a href="#shop" data-view="shop">Product</a></li>
+            <li><a href="#about" data-view="about">About</a></li>
+            <li><a href="#contact" data-view="contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Service -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Customer Service</h4>
+          <ul class="footer-links">
+            <li><a href="#contact" id="footerHelpFaqLink" data-footer-action="faq">Help & FAQs</a></li>
+            <li><a href="#shipping-policy" id="footerShippingLink" data-footer-policy="shipping">Shipping Policy</a></li>
+            <li><a href="#return-policy" id="footerReturnLink" data-footer-policy="return">Return Policy</a></li>
+            <li><a href="#terms-conditions" id="footerTermsLink" data-footer-policy="terms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media / Follow Us -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0f172a"></polygon>
+              </svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Strip -->
+    <div class="footer-bottom">
+      <div class="footer-container bottom-flex">
+        <p class="copyright-text">© 2025 ShopEase. All rights reserved.</p>
+        <div class="trust-badges">
+          <span>🔒 Secure Payments</span>
+          <span class="bullet-dot">•</span>
+          <span>Easy Returns</span>
+          <span class="bullet-dot">•</span>
+          <span>24/7 Support</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Live Chat Widget -->
+  <div class="live-chat-floating-container" id="liveChatWidget">
+    <button class="live-chat-toggle-btn" id="liveChatToggleBtn" title="24/7 Live Support Chat" aria-label="Open Live Chat">
+      <span class="chat-toggle-icon">💬</span>
+      <span class="chat-toggle-label">Live Support</span>
+      <span class="chat-online-dot"></span>
+    </button>
+    
+    <div class="live-chat-box" id="liveChatBox" style="display: none;">
+      <div class="chat-box-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">🤖</div>
+          <div>
+            <h4>ShopEase Assistant</h4>
+            <span class="chat-status"><span class="status-dot"></span> Online • Instant Replies</span>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button class="chat-close-btn" id="closeLiveChatBtn" title="Close Chat" aria-label="Close Chat">&times;</button>
+        </div>
+      </div>
+      
+      <div class="chat-box-messages" id="chatMessages">
+        <div class="chat-msg bot-msg">
+          <div class="msg-bubble">
+            <p>Hello! Welcome to ShopEase Support 👋 How can I assist you today?</p>
+            <div class="chat-quick-actions">
+              <button type="button" class="chat-chip" data-chat-ask="Track my order">📦 Track Order</button>
+              <button type="button" class="chat-chip" data-chat-ask="How fast is delivery?">🚚 Delivery Time</button>
+              <button type="button" class="chat-chip" data-chat-ask="What is your return policy?">🔄 Return Policy</button>
+              <button type="button" class="chat-chip" data-chat-ask="Do you have discount coupons?">🎟️ Coupon Codes</button>
+              <button type="button" class="chat-chip" data-chat-ask="Talk to a support human">👤 Human Agent</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <form class="chat-box-footer" id="chatInputForm">
+        <input type="text" id="chatInputField" placeholder="Ask anything about orders, products..." autocomplete="off">
+        <button type="submit" id="chatSendBtn" title="Send Message" aria-label="Send Message">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js?v=2"></script>
+</body>
+</html>
